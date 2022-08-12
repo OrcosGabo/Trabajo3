@@ -7,7 +7,7 @@ urllib3.disable_warnings()
 url="https://192.168.100.215"
 
 r = requests.get(url+"/rest/ip/address/*1", auth=(conf.user,conf.clave), verify=False)
-print(json.dumps(r.json(), indent=2))
+#print(json.dumps(r.json(), indent=2))
 
 r2 = requests.get(url + "/rest/interface/ether1", auth=(conf.user,conf.clave), verify=False)
 #print(r2.json()["mac-address"])
