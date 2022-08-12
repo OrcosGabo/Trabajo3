@@ -12,7 +12,10 @@ r = requests.get(url+"/rest/ip/address/*3", auth=(conf.user,conf.clave), verify=
 r2 = requests.get(url + "/rest/interface/ether1", auth=(conf.user,conf.clave), verify=False)
 #print(r2.json()["mac-address"])
 
-if r2.json()["mac-address"] == "00:0C:29:10:C7:72":
-    print("El equipo no fue cambiado")
-else:
-    print("Alguien cambio el equipo!!!")
+#if r2.json()["mac-address"] == "00:0C:29:10:C7:72":
+#    print("El equipo no fue cambiado")
+#else:
+#    print("Alguien cambio el equipo!!!")
+
+r3 = requests.get(url + "/rest/ip/address?address=192.168.100.217/24", auth=(conf.user,conf.clave), verify=False)
+print(json.dumps(r3.json(), indent=2))
